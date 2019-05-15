@@ -9,8 +9,8 @@ def send_weather(message):
     place = message.text
     try:
         w = observation.get_weather()
-    except:
-        bot.reply_to(message, 'Not found')
+    except Exception as e:
+        bot.reply_to(message, e)
         return
     temp = w.get_temperature('celsius')['temp']
     answer = f'Weather in {place}: \n{temp} °C, ' + w.get_detailed_status() + '\n'
