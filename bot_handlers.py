@@ -6,7 +6,7 @@ owm = pyowm.OWM(OWM_API_KEY)
 
 @bot.message_handler(content_types=['text'])
 def send_weather(message):
-    place = message.text
+    observation = owm.weather_at_place(message.text)  
     try:
         w = observation.get_weather()
     except Exception as e:
