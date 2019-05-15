@@ -1,5 +1,6 @@
 import pyowm
 from bot import bot
+from config import OWM_API_KEY
 
 owm = pyowm.OWM(OWM_API_KEY)
 
